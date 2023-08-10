@@ -1,0 +1,15 @@
+{
+    "name": "magazord-backend-test/doctrine",
+    "description": "Arquivo composer responsavel por instalar doctrine",
+    "type": "library",
+    "require": {
+        "doctrine/orm": "*",
+        "symfony/cache": "^6.3"
+    },
+    "authors": [
+        {
+            "name": "Mateus Vinicius Bailich Capistrano",
+            "email": "mateus.nn84@gmail.com"
+        }
+    ]
+}
