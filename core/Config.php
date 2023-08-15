@@ -13,4 +13,5 @@ class Config
     const SHOW_ERRORS = false;
     const DEFAULT_LANGUAGE = "pt_BR";
     const LANGUAGES = ['pt_BR', 'en_US'];
+    const DEFAULT_VIEW = 'Home';
 }

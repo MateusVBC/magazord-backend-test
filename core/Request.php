@@ -1,43 +1,46 @@
 <?php
-
-namespace Core;
+namespace MateusVBC\Magazord_Backend\Core;
 
 abstract class Request
 {
-    public static function isPost() {
-        if($_SERVER['REQUEST_METHOD'] == "POST") {
+    public static function isPost()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
             return true;
         }
 
         return false;
     }
 
-    public static function isGet() {
-        if($_SERVER['REQUEST_METHOD'] == "GET") {
+    public static function isGet()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
             return true;
         }
 
         return false;
     }
 
-    public static function getAllParams() {
-        if(self::isPost()) {
+    public static function getAllParams()
+    {
+        if (self::isPost()) {
             return $_POST;
         }
 
-        if(self::isGet()) {
+        if (self::isGet()) {
             return $_GET;
         }
 
         return [];
     }
 
-    public static function getParam(String $param) {
-        if(self::isPost()) {
+    public static function getParam(string $param)
+    {
+        if (self::isPost()) {
             return $_POST[$param];
         }
 
-        if(self::isGet()) {
+        if (self::isGet()) {
             return $_GET[$param];
         }
     }
