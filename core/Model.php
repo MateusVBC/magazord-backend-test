@@ -8,6 +8,9 @@ use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Query\QueryBuilder;
 use MateusVBC\Magazord_Backend\Core\Config;
 
+/**
+ * Classe base para os modelos
+ */
 abstract class Model
 {
 
@@ -33,6 +36,9 @@ abstract class Model
         $this->queryBuilder = $this->connection->createQueryBuilder();
     }
 
+    /**
+     * Retorna as chaves da tabela
+     */
     public abstract function getKey(): array;
 
     public function getId(): int|null
@@ -86,6 +92,7 @@ abstract class Model
             $insertArray[$att] = '\'' . $this->{'get'.$att}(). '\'';
         }
         $this->getQueryBuilder()->insert($this->getClassName())->values($insertArray)->executeQuery();
+        
     }
 
     /**

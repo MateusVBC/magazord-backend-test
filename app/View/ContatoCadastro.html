@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Consultas</title>
+  <link rel="stylesheet" href="app/view/css/cadastro_style.css" />
+  <link rel="icon" href="https://www.iconpacks.net/icons/2/free-rocket-icon-3432-thumb.png" />
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div class="login">
+    <h1 style="font-size: 30px;">Cadastro de Contato</h1>
+    <form method="post" action="?action=insert">
+      <input type="text" name="descricao" placeholder="Descrição" required="required" maxlength="50">
+      <select name="tipo" style="background-color: rgba(0, 0, 0, 0.432); color: white; width: 100%; margin-bottom: 10px; padding: 10px;">
+        <option value=""></option>
+        <option value="1">Telefone</option>
+        <option value="2">E-Mail</option>
+      </select>
+      <select name="idPessoa" style="background-color: rgba(0, 0, 0, 0.432); color: white; width: 100%; margin-bottom: 10px; padding: 10px;" required>
+        <option value=""></option>
+        %%option_pessoa
+      </select>
+      <input type="hidden" name="view" value="Contato">
+      <button type="submit" class="btn btn-primary btn-block btn-large" name="search" value="Contato">Cadastrar</button>
+    </form>
+  </div>
+</body>
+
+</html>

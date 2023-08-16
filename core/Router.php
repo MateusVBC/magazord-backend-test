@@ -1,6 +1,9 @@
 <?php
 namespace MateusVBC\Magazord_Backend\Core;
 
+/**
+ * Classe que acessa as 'rotas' do sistema
+ */
 class Router
 {
     private object $route;

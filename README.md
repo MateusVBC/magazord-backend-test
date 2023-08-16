@@ -1,73 +1,23 @@
-<div align='center'>
- 
-![Magazord](image/logo-magazord.png)
- 
- </div>
+## Etapas para configuração do site.
 
-# Teste para vaga de Desenvolvedor Back-end no Magazord.com.br
-Este repositório tem como fim testar os candidatos para vaga de desenvolvedor Desenvolvedor Back-end na empresa [Magazord](https://magazord.com.br).
-> Para esta vaga buscamos alguém apaixonado por PHP, JavaScript, Banco de Dados, APIs e que tenha facilidade em outras tecnologias e esteja sempre atento aos detalhes!
+Passo a passo testado com um servidor local (localhost), pode vir a ocorrer problemas caso testado em qualquer coisa diferente disso.
 
+- Baixe uma copia do projeto git
 
-## O teste
+- Acesse o phpmyadmin atraves do dashboard do localhost
 
-O objetivo deste teste é garantir que suas habilidades de programação sejam postas a prova. 
-O importante é o funcionamento e o cumprimento com os requisitos e utilização de boas práticas de programação. 
-O visual da aplicação é secundário, não será critério de avaliação.
+- Acesse alguma opção semelhante a 'importar' e selecione o arquivo 'sql\estrutura.sql'
 
-Será realizado um simples sistema de contatos, utilizando PHP, JS, HTML, CSS e Banco de Dados. 
-É necessário que o sistema utilize o padrão MVC e que a manipulação com o banco de dados opere em conjunto com uma ORM chamada Doctrine. 
+- Após iniciar o Apache e o MySql, acesse a pasta do projeto. O navegador deve abrir o index.php, mas caso não o faça, acesse o index
 
-Não utilizar framework's para desenvolver a aplicação back-end. 
-Podem ser utilizados frameworks JS para facilitar o desenvolvimento visual.
+## Informações persistentes
 
-ATENÇÃO: É de extrema importância um arquivo README para instrução de como executar o projeto.
+Para alterar algum registro, deve-se clicar em cima da informação que deseja alterar e clicar no botão que deve surgir. Só é possivel alterar uma linha de cada vez.
 
-## Requisitos funcionais:
+Excluir uma pessoa exclui os contatos relacionados a mesma.
 
-- RF01 - O sistema deve manter uma tela de consulta para pessoas.
+Por algum motivo, utilizar o opera tem a tendência de não carregar o css da pagina inicial. Dito isto, outro navegadores funcionam normalmente, e mesmo que não funcionem, não impede o funcionamente da pagina.
 
-- RF02 - O sistema deve manter um campo de pesquisa por nome de pessoa.
+Acredito que não irá ocorrer nenhum problema durante o Setup do projeto, porém, no pior dos casos, eu tenho um dominio publico onde eu posso upar o projeto.
 
-- RF03 - O sistema deve manter uma tela de consulta para contatos.
-
-- RF04 - O sistema deve manter um CRUD (Cadastrar, Visualizar, Alterar, Excluir) para pessoas.
-
-- RF05 - O sistema deve manter um CRUD (Cadastrar, Visualizar, Alterar, Excluir) para contato.
-
-
-## Requisitos não funcionais:
-
-- RNF01 - O sistema deve utilizar a linguagem PHP para o Back-end.
-
-- RNF02 - O sistema deve utilizar a ORM Doctrine para o Back-end.
-
-- RNF03 - O sistema deve utilizar JS, HTML, CSS.
-
-- RNF04 - O sistema deve ser organizado pelo padrão MVC.
-
-- RNF05 - O sistema deve utilizar o Composer para gerenciamento de dependências.
-
-- RNF06 - O sistema deve utilizar um banco de dados SQL (postgres ou mysql).
-![Modelagem](image/diagrama.png)
-
-- RNF07 - O sistema deverá ter seu controle de versão no Github.
-
-
-## Regra de Negócio:
-
-- RN01 - São dados de pessoas: Nome e CPF.
-
-- RN02 - São dados de contato: Tipo (Telefone ou Email), Descrição.
-
-- RN03 - Uma pessoa pode ter vários contatos
-
-## Links para documentação de ferramentas utilizadas.
-
-- Composer: https://getcomposer.org/
-- Doctrine: https://www.doctrine-project.org/projects/doctrine-orm/en/2.10/index.html
-
-## Envio do teste
-
-* Suba o repositório no seu Github e envie o link diretamente para o seu recrutador.
-Obs.: Não serão aceitos alterações após o envio.
+Foi utilizado de alguns templates gratuitos para a estilização do site.

@@ -1,6 +1,9 @@
 <?php
 namespace MateusVBC\Magazord_Backend\Core;
 
+/**
+ * Classe responsavel por lidar com o SESSION do sistema
+ */
 class Session
 {
     public static function set($key, $value)

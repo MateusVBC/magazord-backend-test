@@ -1,6 +1,9 @@
 <?php
 namespace MateusVBC\Magazord_Backend\Core;
 
+/**
+ * Classe com as configurações usadas
+ */
 class Config
 {
     const DB_DRIVER = 'mysql';
@@ -16,6 +19,7 @@ class Config
     const DEFAULT_VIEW = 'Home';
     const ACTION_DELETE = 'delete';
     const ACTION_UPDATE = 'update';
+    const ACTION_INSERT = 'insert';
     const OPTIONS_COLUMNS = [
         <<<EOD
         <button type="submit" class="btn" id="updateButton?id?" formaction="?action=update&id=?id?" hidden>

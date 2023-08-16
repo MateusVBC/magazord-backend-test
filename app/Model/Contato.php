@@ -5,22 +5,27 @@ use Doctrine\ORM\Mapping\Column;
 use MateusVBC\Magazord_Backend\Core\Model;
 
 #[Entity]
-#[Table(name: 'pessoa')]
-class Pessoa extends Model
+#[Table(name: 'contato')]
+class Contato extends Model
 {
     #[Column(length: 50)]
-    private string $nome;
-    #[Column(length: 11)]
-    private string $cpf;
+    private string $descricao;
+    private int $tipo;
+    private int $idPessoa;
 
-    public function getNome(): string
+    public function getDescricao(): string
     {
-        return $this->nome;
+        return $this->descricao;
     }
 
-    public function getCpf(): string
+    public function getTipo(): int
     {
-        return $this->cpf;
+        return $this->tipo;
+    }
+
+    public function getIdPessoa(): string
+    {
+        return $this->idPessoa;
     }
 
     public function setId(int $id)
@@ -28,18 +33,23 @@ class Pessoa extends Model
         $this->id = $id;
     }
 
-    public function setNome(string $nome)
+    public function setIdPessoa(int $idPessoa)
     {
-        $this->nome = $nome;
+        $this->idPessoa = $idPessoa;
     }
 
-    public function setCpf(string $cpf)
+    public function setDescricao(string $descricao)
     {
-        $this->cpf = $cpf;
+        $this->descricao = $descricao;
+    }
+
+    public function setTipo(int $tipo)
+    {
+        $this->tipo = $tipo;
     }
 
     /**
-     * Retorna um array com o nome da chave no banco e seu valor
+     * Retorna um array com o descricao da chave no banco e seu valor
      */
     public function getKey(): array
     {
