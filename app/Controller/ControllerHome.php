@@ -4,6 +4,7 @@ namespace MateusVBC\Magazord_Backend\App\Controller;
 use MateusVBC\Magazord_Backend\Core\Controller;
 
 /**
+ * Arquivo controller da home
  */
 class ControllerHome extends Controller
 {
