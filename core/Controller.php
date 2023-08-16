@@ -10,35 +10,30 @@ abstract class Controller
 
     protected abstract function processView(): void;
 
+    protected abstract function processRequest() : void;
+
     public function index()
     {
-        $this->before();
-        $this->processView();
+        if($this->before()) {
+            $this->processRequest();
+            $this->processView();
+        }
     }
 
     protected function before()
     {
         $reflectionClass = new \ReflectionClass(get_class($this));
-        if('Controller'.$_SESSION['view'] != $reflectionClass->getShortName()) {
-            $nomeController = 'Controller'.$_SESSION['view'];
+        $Session = new Session();
+        if(Request::getParam('view', true)) $Session->set('view', Request::getParam('view', true));
+        if('Controller'.$Session->get('view') != $reflectionClass->getShortName()) {
+            $nomeController = 'MateusVBC\Magazord_Backend\App\Controller\Controller'.$Session->get('view');
             $Route = new Router();
             $Controller = new $nomeController();
             $Route->set($Controller, ['function' => 'index', 'params' => '']);
             $Route->dispatch();
+            return false;
         }
-    }
-
-
-    protected function getLanguage()
-    {
-        return $_COOKIE['language'] ?? Config::DEFAULT_LANGUAGE;
-    }
-
-    protected function setLanguage($lang)
-    {
-        if (in_array($lang, Config::LANGUAGES)) {
-            setcookie('language', $lang, time() + 3600 * 24 * 30);
-        }
+        return true;
     }
 
     public function getView()

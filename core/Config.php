@@ -14,4 +14,18 @@ class Config
     const DEFAULT_LANGUAGE = "pt_BR";
     const LANGUAGES = ['pt_BR', 'en_US'];
     const DEFAULT_VIEW = 'Home';
+    const ACTION_DELETE = 'delete';
+    const ACTION_UPDATE = 'update';
+    const OPTIONS_COLUMNS = [
+        <<<EOD
+        <button type="submit" class="btn" id="updateButton?id?" formaction="?action=update&id=?id?" hidden>
+            <img src='app/view/img/refresh.png' style="width:10px;height:10px;"></img>
+        </button>
+        EOD,
+        <<<EOD
+        <button class="btn" type="submit" formaction="?action=delete&id=?id?">
+            <img src='app/view/img/delete.png' class="icon"></img>
+        </button>
+        EOD
+    ];
 }

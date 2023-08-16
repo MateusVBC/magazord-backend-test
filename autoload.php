@@ -6,6 +6,5 @@ spl_autoload_register(
         $caminhoArquivo  = str_replace('\\', DIRECTORY_SEPARATOR, $caminhoCompleto);
         $caminhoArquivo .= '.php';
         if (file_exists($caminhoArquivo)) require_once $caminhoArquivo;
-        $_SESSION['teste'] = $caminhoArquivo;
     }
 );

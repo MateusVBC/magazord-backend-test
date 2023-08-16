@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Consultas</title>
+  <link rel="stylesheet" href="app/view/css/table_style.css" />
+  <link rel="icon" href="https://www.iconpacks.net/icons/2/free-rocket-icon-3432-thumb.png" />
+  <meta charset="utf-8">
+  <script>
+    window.value = 0;
+    function showButton(id) {
+      if(window.value == 0 || window.value == id){
+        var x = document.getElementById("updateButton" + id);
+        x.style.display = "block";
+        window.value = id;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <form method="POST">
+    <div class="center-screen">
+      <h1 style="color: #FFF;">Consulta de Pessoas</h1>
+      %%create_table
+      <div class="container">
+        <a class="btn custom-btn-css" href="?add=Pessoa">Adicionar Pessoa</a>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>

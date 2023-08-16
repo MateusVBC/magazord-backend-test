@@ -93,7 +93,35 @@ abstract class Model
      */
     public function update()
     {
+        $reflectionClass = new \ReflectionClass(get_class($this));
+        $atts = $reflectionClass->getProperties();
+        $childAtt = [];
+        foreach ($atts as $att) {
+            if ($att->class === get_class($this)) {
+                $childAtt[] = $att->getName();
+            }
+        }
+        $insertArray = [];
+        foreach ($childAtt as $att) {
+            $insertArray[$att] = '\'' . $this->{'get'.$att}(). '\'';
+        }
+        $query = $this->getQueryBuilder()->update($this->getClassName());
+        foreach ($insertArray as $column => $value) {
+            $query->set($column, $value);
+        }
+        $this->addWhereKeyToQuery($query)->executeQuery();
+    }
 
+    /**
+     * Retorna todas as pessoas do banco
+     */
+    public function getAll()
+    {
+        $query = $this->getQueryBuilder()->select('*')->from($this->getClassName());
+        if ($query->executeQuery()) {
+            return $query->fetchAllAssociative();
+        }
+        return false;
     }
 
     /**

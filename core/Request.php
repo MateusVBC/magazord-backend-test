@@ -34,14 +34,13 @@ abstract class Request
         return [];
     }
 
-    public static function getParam(string $param)
+    public static function getParam(string $param, bool|null $post = null)
     {
-        if (self::isPost()) {
-            return $_POST[$param];
+        if ((self::isPost() && is_null($post)) || $post) {
+            return !isset($_POST[$param]) ? false : $_POST[$param];
         }
-
-        if (self::isGet()) {
-            return $_GET[$param];
+        else if ((self::isPost() && is_null($post)) || !$post) {
+            return !isset($_GET[$param]) ? false : $_GET[$param];
         }
     }
 }
